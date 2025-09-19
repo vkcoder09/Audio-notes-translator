@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Notes & Translator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Audio Notes & Translator 🎙️➡️📝</h1>
+        <p>Record your thoughts in any language, transcribe them into notes, and translate them instantly.</p>
+
+        <div class="controls">
+            <div class="language-select">
+                <label for="language">Recording Language:</label>
+                <select id="language">
+                    <option value="en-IN">English (India)</option>
+                    <option value="hi-IN">Hindi (India)</option>
+                    <option value="en-US">English (US)</option>
+                    <option value="es-ES">Spanish</option>
+                    <option value="fr-FR">French</option>
+                    <option value="de-DE">German</option>
+                    <option value="ja-JP">Japanese</option>
+                </select>
+            </div>
+            <button id="startButton" class="btn"><i class="fas fa-microphone"></i> Start Recording</button>
+            <button id="stopButton" class="btn" disabled><i class="fas fa-stop-circle"></i> Stop Recording</button>
+        </div>
+        
+        <p class="status" id="status">Status: Idle</p>
+
+        <div class="notes-section">
+            <h2>Your Notes</h2>
+            <textarea id="notes" placeholder="Your transcribed text will appear here..."></textarea>
+            <div class="actions">
+                 <button id="copyButton" class="action-btn"><i class="fas fa-copy"></i> Copy</button>
+                 <button id="clearButton" class="action-btn"><i class="fas fa-trash"></i> Clear</button>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="translation-section">
+            <h2>Translate Notes</h2>
+            <div class="translation-controls">
+                <label for="translateTo">Translate to:</label>
+                <select id="translateTo">
+                    <option value="hi">Hindi</option>
+                    <option value="en">English</option>
+                    <option value="fr">French</option>
+                    <option value="es">Spanish</option>
+                    <option value="de">German</option>
+                     <option value="te">Telugu</option>
+                    <option value="ta">Tamil</option>
+                </select>
+                <button id="translateButton" class="btn translate-btn">Translate</button>
+            </div>
+            <textarea id="translatedNotes" placeholder="Translated text will appear here..." readonly></textarea>
+        </div>
+        
+        <div class="info-box">
+           <p><strong>Note:</strong> Audio file processing requires a server. This demo focuses on live recording. For "Hinglish," select 'Hindi (India)' as the recording language for best results.</p>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
